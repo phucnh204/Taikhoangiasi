@@ -3,16 +3,17 @@ import { Product } from "@/components/sections/ProductCard";
 export const featuredProducts: Product[] = [
   {
     id: 1,
-    name: "Google Gemini Advanced",
-    image: "/products/gemini.png",
-    badge: "6 Tháng",
-    badgeColor: "bg-blue-500",
-    discount: "-68%",
-    originalPrice: "350.000₫",
+    name: "ChatGPT Plus",
+    image: "/products/chatgpt.png",
+    badge: "1 Tháng",
+    badgeColor: "bg-emerald-500",
+    discount: "-51%",
+    originalPrice: "450.000₫",
     salePrice: "79.000₫",
-    sold: 767,
-    bgGradient: "from-blue-600 to-indigo-700",
-    tag: "Best Seller",
+    sold: 1355,
+    // bgGradient: "from-teal-600 to-emerald-700",
+    tag: "Hot",
+    
   },
 
   {
@@ -25,38 +26,12 @@ export const featuredProducts: Product[] = [
     originalPrice: "169.000₫",
     salePrice: "39.000₫",
     sold: 347,
-    bgGradient: "from-purple-600 to-pink-600",
+    // bgGradient: "from-purple-600 to-pink-600",
   },
 
   {
     id: 3,
-    name: "Netflix Premium 4K",
-    image: "/products/netflix.png",
-    badge: "1 Tháng",
-    badgeColor: "bg-red-600",
-    discount: "-76%",
-    originalPrice: "279.000₫",
-    salePrice: "79.000₫",
-    sold: 476,
-    bgGradient: "from-red-700 to-red-900",
-  },
-
-  {
-    id: 4,
-    name: "ChatGPT Plus",
-    image: "/products/chatgpt.png",
-    badge: "1 Tháng",
-    badgeColor: "bg-emerald-500",
-    discount: "-51%",
-    originalPrice: "450.000₫",
-    salePrice: "79.000₫",
-    sold: 1355,
-    bgGradient: "from-teal-600 to-emerald-700",
-    tag: "Hot",
-  },
-
-  {
-    id: 5,
+    
     name: "CapCut Pro",
     image: "/products/capcut.png",
     badge: "1 Tháng",
@@ -65,11 +40,12 @@ export const featuredProducts: Product[] = [
     originalPrice: "99.000₫",
     salePrice: "39.000₫",
     sold: 1256,
-    bgGradient: "from-pink-600 to-rose-700",
+    // bgGradient: "from-pink-600 to-rose-700",
   },
 
   {
-    id: 6,
+    id: 4,
+    
     name: "Grok AI Premium",
     image: "/products/grok.png",
     badge: "1 Tháng",
@@ -78,7 +54,34 @@ export const featuredProducts: Product[] = [
     originalPrice: "400.000₫",
     salePrice: "15.000₫",
     sold: 899,
-    bgGradient: "from-slate-600 to-gray-800",
+    // bgGradient: "from-slate-600 to-gray-800",
+  },
+
+  {
+    id: 5,
+    name: "Netflix Premium 4K",
+    image: "/products/netflix.png",
+    badge: "1 Tháng",
+    badgeColor: "bg-red-600",
+    discount: "-76%",
+    originalPrice: "279.000₫",
+    salePrice: "79.000₫",
+    sold: 476,
+    // bgGradient: "from-red-700 to-red-900",
+  },
+
+  {
+    id: 6,
+   name: "Google Gemini Advanced",
+    image: "/products/gemini.png",
+    badge: "6 Tháng",
+    badgeColor: "bg-blue-500",
+    discount: "-68%",
+    originalPrice: "350.000₫",
+    salePrice: "79.000₫",
+    sold: 767,
+    // bgGradient: "from-blue-600 to-indigo-700",
+    tag: "Best Seller",
   },
 
   {
@@ -91,19 +94,22 @@ export const featuredProducts: Product[] = [
     originalPrice: "1.999.000₫",
     salePrice: "229.000₫",
     sold: 348,
-    bgGradient: "from-orange-600 to-amber-700",
+    // bgGradient: "from-orange-600 to-amber-700",
   },
 
   {
-    id: 8,
-    name: "Adobe Creative Cloud",
-    image: "/products/adobe.png",
-    badge: "1 Tháng",
-    badgeColor: "bg-red-500",
-    discount: "-75%",
-    originalPrice: "159.000₫",
-    salePrice: "99.000₫",
-    sold: 451,
-    bgGradient: "from-red-600 to-red-800",
-  },
+  id: 8,
+  name: "Duolingo Super Duolingo",
+  image: "/products/duolingo.png",
+  badge: "1 năm",
+  badgeColor: "bg-green-500",
+
+  discount: "-75%",
+  originalPrice: "159.000₫",
+  salePrice: "99.000₫",
+  sold: 451,
+
+  // bgGradient: "from-green-400 via-emerald-500 to-lime-500",
+  tag: "Learn Smart",
+}
 ];

@@ -3,7 +3,7 @@ import {
   ShoppingCart,
   Star,
   ShieldCheck,
-  ArrowRight
+  ArrowRight,
 } from "lucide-react";
 
 export interface Product {
@@ -20,7 +20,6 @@ export interface Product {
   salePrice: string;
   sold: number;
 
-  bgGradient: string;
   tag?: string;
 }
 
@@ -41,6 +40,7 @@ export function ProductCard({ product }: { product: Product }) {
         hover:shadow-[0_20px_50px_rgba(6,182,212,.15)]
       "
     >
+      {/* Hover Glow */}
       <div
         className="
           absolute
@@ -52,56 +52,44 @@ export function ProductCard({ product }: { product: Product }) {
           from-cyan-500/5
           via-transparent
           to-purple-500/5
+          pointer-events-none
         "
       />
 
-      {/* Banner */}
-      <div
-        className={`
-          relative
-          h-44
-          overflow-hidden
-          bg-gradient-to-br
-          ${product.bgGradient}
-        `}
-      >
+      {/* Banner Image */}
+      <div className="relative h-44 overflow-hidden">
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          className="
+            object-cover
+            transition-transform
+            duration-500
+            group-hover:scale-110
+          "
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+
+        {/* Discount */}
         {product.discount && (
-          <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-red-500 text-white text-xs font-bold">
+          <div className="absolute top-3 left-3 z-10 px-3 py-1 rounded-full bg-red-500 text-white text-xs font-bold">
             {product.discount}
           </div>
         )}
 
-        <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/30 backdrop-blur-md text-xs text-white">
-          PremiKey
+        {/* Brand */}
+        <div className="absolute top-3 right-3 z-10 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-xs text-white">
+          TaiKhoanGiaSi
         </div>
 
-        {/* Logo */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div
-            className="
-              w-20 h-20
-              rounded-3xl
-              bg-white
-              flex items-center justify-center
-              shadow-2xl
-              transition-transform duration-300
-              group-hover:scale-110
-            "
-          >
-            <Image
-              src={product.image}
-              alt={product.name}
-              width={56}
-              height={56}
-              className="object-contain"
-            />
-          </div>
-        </div>
-
+        {/* Tag */}
         {product.tag && (
           <div
             className="
-              absolute left-3 bottom-3
+              absolute left-3 bottom-3 z-10
               flex items-center gap-1
               rounded-full
               bg-emerald-500/20
@@ -115,10 +103,12 @@ export function ProductCard({ product }: { product: Product }) {
           </div>
         )}
 
+        {/* Badge */}
         <div
           className="
-            absolute right-3 bottom-3
-            rounded-full bg-black/30
+            absolute right-3 bottom-3 z-10
+            rounded-full
+            bg-black/50
             backdrop-blur-md
             px-3 py-1
             text-xs text-white
@@ -143,15 +133,25 @@ export function ProductCard({ product }: { product: Product }) {
           {product.name}
         </h3>
 
+        {/* Rating */}
         <div className="mt-3 flex items-center gap-2">
-          <Star size={14} className="fill-yellow-400 text-yellow-400" />
-          <span className="text-sm text-gray-300">4.9</span>
+          <Star
+            size={14}
+            className="fill-yellow-400 text-yellow-400"
+          />
+
+          <span className="text-sm text-gray-300">
+            4.9
+          </span>
+
           <span className="text-gray-600">•</span>
+
           <span className="text-sm text-gray-400">
-            {product.sold} lượt mua
+            {product.sold.toLocaleString("vi-VN")} lượt mua
           </span>
         </div>
 
+        {/* Price */}
         <div className="mt-4 flex items-end gap-2">
           <span className="text-2xl font-black text-cyan-400">
             {product.salePrice}
@@ -164,11 +164,14 @@ export function ProductCard({ product }: { product: Product }) {
           )}
         </div>
 
+        {/* CTA */}
         <div className="mt-5 flex gap-2">
           <button
             className="
               flex-1
-              flex items-center justify-center gap-2
+              flex items-center
+              justify-center
+              gap-2
               rounded-xl
               bg-gradient-to-r
               from-cyan-500
@@ -186,7 +189,8 @@ export function ProductCard({ product }: { product: Product }) {
           <button
             className="
               w-12
-              flex items-center justify-center
+              flex items-center
+              justify-center
               rounded-xl
               border border-white/10
               hover:bg-white/5
